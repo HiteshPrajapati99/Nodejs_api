@@ -33,9 +33,9 @@ router.delete("/books/:id", authChek, booksapi.deletbook);
 // Shearch Api
 
 // Books Search
-router.get("/sherch/book/:key", booksapi.shearchBooks);
+router.get("/sherch/book/:key", authChek, booksapi.shearchBooks);
 // Users Search
-router.get("/search/user/:key", UserApi.SearchUser);
+router.get("/search/user/:key", authChek, UserApi.SearchUser);
 
 //Pagination APi
 
