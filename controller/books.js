@@ -168,7 +168,7 @@ module.exports.updatebook = (req, res) => {
 module.exports.shearchBooks = async (req, res) => {
   try {
     const data = await books.find({
-      $or: [{ name: { $regex: req.params.key, $options: "i" } }],
+      $or: [{ name: { $regex: ".*" + req.params.key + ".*", $options: "i" } }],
     });
 
     if (data.length > 0) {
